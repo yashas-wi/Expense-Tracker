@@ -53,17 +53,6 @@ public class Expense {
         this.month = month.toString();
     }
 
-    public double getBudget(){
-        return budget;
-    }
-    public void setBudget(){
-        this.budget = budget;
-    }
-
-    public  void setMonth(String month){
-        this.month = month;
-    }
-
     @Override
     public String toString() {
         return "Expense{" +
@@ -73,8 +62,6 @@ public class Expense {
                 ", created=" + createdAt +
                 ", updated=" + updatedAt +
                 ",monthName=" + month +
-                ", budget=" + budget +
                 '}';
     }
-
 }
