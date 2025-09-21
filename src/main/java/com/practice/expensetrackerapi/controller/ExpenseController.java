@@ -27,15 +27,6 @@ public class ExpenseController {
         }
     }
 
-    @GetMapping("/nameOfExpense")
-    public ResponseEntity <String> getExpenseFromName(@RequestParam String name){
-       try{
-           return ResponseEntity.ok().build();
-       }catch (IllegalArgumentException e){
-           return ResponseEntity.badRequest().body(e.getMessage());
-       }
-    }
-
     @GetMapping("/listOfExpenses")
     public ResponseEntity <List<Expense>> lists(){
         try {
