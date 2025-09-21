@@ -53,16 +53,6 @@ public class ExpenseService {
         return response + "List Added Successfully";
     }
 
-    public Expense nameOfExpense(String name) {
-        for (Expense expense : expenseList) {
-            if (expense.getName().equals(name)) {
-                expense.setCreatedAt(LocalDateTime.now());
-                return expense;
-            }
-        }
-        return null;
-    }
-
     public List<Expense> expenseList() {
 
         if(!checkBudgetStatus()) throw new IllegalArgumentException("Budget not set!");
@@ -121,27 +111,10 @@ public class ExpenseService {
         }
     }
 
-    // agasdgvfwefg fa agfa ag
-    // .split('g')
-    // -> ["a", "asd", "vfwef", " fa a", "fa a"][1]
 
     public String summaryOfAllMonth() {
         if(!checkBudgetStatus()) throw new IllegalArgumentException("Budget not set!");
         Map<Month, Double> map = new HashMap<>();
-//       for(Month m:  Month.values()){
-//           map.put(m, 0.0);
-//       }
-//       for(Expense expense : expenseList) {
-//           Month month = expense.getMonth();
-//           map.put(month, map.get(month) +  expense.getAmount());
-//       }
-//       String template = "Total Expense for ";
-//       StringBuilder result = new StringBuilder();
-//
-//       for(Month m: Month.values()) {
-//           double amt = map.get(m);
-//           result.append(template).append(m).append(" is ").append(amt).append("\n");
-//       }
 
         for (Expense expense : expenseList) {
             Month month = expense.getMonth();
